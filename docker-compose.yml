@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  sample_frontend:
+    container_name: sample_frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:3000"
+    depends_on:
+      sample_backend:
+        condition: service_healthy
+    networks:
+      - service-network
+    command: sh -c "npm run build && npm start"
+
+  sample_backend:
+    container_name: sample_backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      sample_db:
+        condition: service_healthy
+    # environment:
+    #   DB_CONNECTION: pgsql
+    #   DB_HOST: db
+    #   DB_PORT: 5432
+    #   DB_DATABASE: sample
+    #   DB_USERNAME: admin
+    #   DB_PASSWORD: password
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://sample_backend || exit 1"]      
+      interval: 30s
+      timeout: 10s
+      retries: 5  
+    networks:
+      - service-network
+    command: sh -c "php artisan migrate && apache2-foreground"
+
+  sample_db:
+    container_name: sample_db
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    environment:
+      POSTGRES_DB: sample
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d sample -h sample_db -p 5432 -U admin"]
+      interval: 30s
+      timeout: 10s
+      retries: 5  
+    networks:
+      - service-network
+
+  sample_pgadmin:
+    container_name: sample_pgadmin
+    image: dpage/pgadmin4:8.13
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      sample_db:
+        condition: service_healthy
+    networks:
+      - service-network
+
+volumes:
+  pgdata:
+
+networks:
+  service-network:
+    driver: bridge

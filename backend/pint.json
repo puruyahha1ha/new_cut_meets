@@ -1,0 +1,18 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "array_syntax": {
+            "syntax": "short"
+        },
+        "binary_operator_spaces": {
+            "default": "single_space"
+        },
+        "phpdoc_no_access": false,
+        "phpdoc_no_package": false,
+        "phpdoc_var_without_name": false
+    },
+    "exclude": [
+        "vendor",
+        "storage"
+    ]
+}
