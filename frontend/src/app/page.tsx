@@ -6,10 +6,12 @@ export default async function Home() {
   // const data = await response.json();
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <nav className="bg-gray-800 text-white p-4">Navigation</nav>
+    <div className="flex flex-col min-h-full">
+      <nav className="bg-gray-800 text-white p-4 md:hidden">Navigation</nav>
+      <div className="grid grid-cols-4">
         <Sidebar />
-      <footer className="bg-gray-800 text-white p-4">Footer</footer>
+      </div>
+      <footer className="bg-gray-800 text-white p-4 md:hidden absolute bottom-0 w-screen">Footer</footer>
     </div>
   );
 }
