@@ -1,5 +1,5 @@
-import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
+import Sidebar from "@/components/Sidebar";
 
 export default async function Home() {
 
@@ -12,9 +12,10 @@ export default async function Home() {
       <div className="grid grid-cols-4">
         <Sidebar />
       </div>
-      <div className="bg-gray-800 text-white p-4 md:hidden absolute bottom-0 w-screen">
-        <Footer />
-      </div>
+      {/* SP */}
+      <footer className="bg-gray-800 text-white p-4 md:hidden absolute bottom-0 w-screen">Footer</footer>
+      {/* PC */}
+      <Footer />
     </div>
   );
 }
