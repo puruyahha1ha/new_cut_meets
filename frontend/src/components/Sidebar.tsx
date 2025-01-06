@@ -27,7 +27,7 @@ function classNames(...classes: string[]) {
 
 export default function Sidebar() {
   return (
-    <div className="md:flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 hidden min-h-screen">
+    <div className="md:flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 hidden min-h-screen min-w-[200px]">
       <div className="flex h-16 shrink-0 items-center">
         {/* <img
           alt="Your Company"
@@ -36,9 +36,9 @@ export default function Sidebar() {
         /> */}
       </div>
       <nav className="flex flex-1 flex-col">
-        <ul role="list" className="flex flex-1 flex-col gap-y-7">
+        <ul className="flex flex-1 flex-col gap-y-7">
           <li>
-            <ul role="list" className="-mx-2 space-y-1">
+            <ul className="-mx-2 space-y-1">
               {navigation.map((item) => (
                 <li key={item.name}>
                   <a

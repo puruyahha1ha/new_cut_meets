@@ -17,7 +17,7 @@ export default async function Home() {
         {/* PC */}
         <Sidebar />
         <div>
-          <main className="md:min-w-[800px] mb-[60px]">
+          <main className="mb-[60px]">
             <PlaceListGrid />
           </main>
           {/* PC */}
