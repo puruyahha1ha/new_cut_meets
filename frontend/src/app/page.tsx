@@ -13,7 +13,7 @@ export default async function Home() {
     <div className="flex flex-col min-h-full">
       {/* <nav className="bg-gray-800 text-white p-4 md:hidden">Navigation</nav> */}
       <BasicnavigationHeader />
-      <div className="md:grid grid-cols-3 h-4/5">
+      <div className="md:flex h-4/5">
         {/* PC */}
         <Sidebar />
         <div>
@@ -26,7 +26,7 @@ export default async function Home() {
       </div>
       {/* SP */}
       <BottomNavBar />
-      <footer className="bg-gray-800 text-white p-4 md:hidden fixed z-10 bottom-0 w-screen h-[60px]">Footer</footer>
+      {/* <footer className="bg-gray-800 text-white p-4 md:hidden fixed z-10 bottom-0 w-screen h-[60px]">Footer</footer> */}
     </div>
   );
 }
