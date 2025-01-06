@@ -3,7 +3,7 @@ import { Button } from '@nextui-org/react';
 
 const BottomNavBar = () => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 h-[60px] z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 h-[60px] z-50 md:hidden">
       <div className="flex justify-around items-center h-16">
         <NavItem icon={HomeIcon} label="Home" />
         <NavItem icon={MagnifyingGlassIcon} label="Search" />
