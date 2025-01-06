@@ -91,7 +91,7 @@ const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
                                 <h3 className="text-small font-medium text-default-700">{name}</h3>
                                 {rating !== undefined ? (
                                     <div className="flex items-center gap-1">
-                                        <Icon className="text-default-500" icon="solar:star-bold" width={16} />
+                                        <Icon className="text-yellow-500" icon="solar:star-bold" width={16} />
                                         <span className="text-small text-default-500">{rating}</span>
                                     </div>
                                 ) : null}
