@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import BasicnavigationHeader from "@/components/NextUi/BasicnavigationHeader/App";
 import PlaceListGrid from "@/components/NextUi/PlaceListGrid/App";
 import Sidebar from "@/components/Sidebar";
+import BottomNavBar from "@/components/sample/NavBar";
 
 export default async function Home() {
 
@@ -24,6 +25,7 @@ export default async function Home() {
         </div>
       </div>
       {/* SP */}
+      <BottomNavBar />
       <footer className="bg-gray-800 text-white p-4 md:hidden fixed z-10 bottom-0 w-screen h-[60px]">Footer</footer>
     </div>
   );
