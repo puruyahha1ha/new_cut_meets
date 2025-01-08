@@ -1,32 +1,31 @@
 import Footer from "@/components/Footer";
 import BasicnavigationHeader from "@/components/NextUi/BasicnavigationHeader/App";
-import PlaceListGrid from "@/components/NextUi/PlaceListGrid/App";
+import { PlaceListGrid } from "@/components/NextUi/PlaceListGrid/App";
 import Sidebar from "@/components/Sidebar";
 import BottomNavBar from "@/components/sample/NavBar";
 
 export default async function Home() {
+	// const response = await fetch('http://backend/api/sample');
+	// const data = await response.json();
 
-  // const response = await fetch('http://backend/api/sample');
-  // const data = await response.json();
-
-  return (
-    <div className="flex flex-col min-h-full">
-      {/* <nav className="bg-gray-800 text-white p-4 md:hidden">Navigation</nav> */}
-      <BasicnavigationHeader />
-      <div className="md:flex h-4/5">
-        {/* PC */}
-        <Sidebar />
-        <div>
-          <main className="mb-[60px]">
-            <PlaceListGrid />
-          </main>
-          {/* PC */}
-          <Footer />
-        </div>
-      </div>
-      {/* SP */}
-      <BottomNavBar />
-      {/* <footer className="bg-gray-800 text-white p-4 md:hidden fixed z-10 bottom-0 w-screen h-[60px]">Footer</footer> */}
-    </div>
-  );
+	return (
+		<div className="flex flex-col min-h-full">
+			{/* <nav className="bg-gray-800 text-white p-4 md:hidden">Navigation</nav> */}
+			<BasicnavigationHeader />
+			<div className="md:flex h-4/5">
+				{/* PC */}
+				<Sidebar />
+				<div>
+					<main className="mb-[60px]">
+						<PlaceListGrid />
+					</main>
+					{/* PC */}
+					<Footer />
+				</div>
+			</div>
+			{/* SP */}
+			<BottomNavBar />
+			{/* <footer className="bg-gray-800 text-white p-4 md:hidden fixed z-10 bottom-0 w-screen h-[60px]">Footer</footer> */}
+		</div>
+	);
 }
