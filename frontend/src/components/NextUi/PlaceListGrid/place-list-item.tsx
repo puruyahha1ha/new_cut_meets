@@ -1,5 +1,6 @@
 "use client";
 
+import { useUserList } from "@/features/UserList/hooks/useUserList";
 import { Icon } from "@iconify/react";
 import { Button, Image, Skeleton } from "@nextui-org/react";
 import { cn } from "@nextui-org/react";
@@ -48,6 +49,8 @@ const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
 	) => {
 		const [isLiked, setIsLiked] = React.useState(false);
 
+		const { user, fetchUserList } = useUserList();
+
 		return (
 			<div
 				ref={ref}
@@ -60,31 +63,6 @@ const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
 				)}
 				{...props}
 			>
-				<Button
-					isIconOnly
-					className="absolute right-3 top-3 z-20 bg-background/60 backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
-					radius="full"
-					size="sm"
-					variant="flat"
-					onPress={() => setIsLiked(!isLiked)}
-				>
-					<Icon
-						className={cn("text-default-900/50", {
-							"text-danger-400": isLiked,
-						})}
-						icon="solar:heart-bold"
-						width={16}
-					/>
-				</Button>
-				<Image
-					isBlurred
-					isZoomed
-					alt={name}
-					className="aspect-square w-full hover:scale-110"
-					isLoading={isLoading}
-					src={imageSrc}
-				/>
-
 				<div className="mt-1 flex flex-col gap-2 px-1">
 					{isLoading ? (
 						<div className="my-1 flex flex-col gap-3">
@@ -120,12 +98,38 @@ const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
 							{description ? (
 								<p className="text-small text-default-500">{description}</p>
 							) : null}
-							<p className="text-small font-medium text-default-500">
-								${price}
-							</p>
+							<div className="flex gap-1 alignitems-center justify-between">
+								<p className="text-small font-medium witch-fitcontent text-default-700">
+									${price}
+								</p>
+								<Button
+									isIconOnly
+									radius="full"
+									size="sm"
+									variant="flat"
+									onPress={() => setIsLiked(!isLiked)}
+								>
+									<Icon
+										className={cn("text-default-900/50", {
+											"text-danger-400": isLiked,
+										})}
+										icon="solar:heart-bold"
+										width={16}
+									/>
+								</Button>
+							</div>
 						</>
 					)}
 				</div>
+
+				<Image
+					isBlurred
+					isZoomed
+					alt={name}
+					className="aspect-square w-full hover:scale-110"
+					isLoading={isLoading}
+					src={imageSrc}
+				/>
 			</div>
 		);
 	},
