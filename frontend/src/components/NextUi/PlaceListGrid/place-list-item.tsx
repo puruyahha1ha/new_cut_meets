@@ -1,5 +1,6 @@
 "use client";
 
+import { PrimaryButton } from "@/components/PrimaryButton";
 import { useUserList } from "@/features/UserList/hooks/useUserList";
 import { Icon } from "@iconify/react";
 import { Button, Image, Skeleton } from "@nextui-org/react";
@@ -117,6 +118,13 @@ const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
 										width={16}
 									/>
 								</Button>
+								<PrimaryButton
+									onClick={() => {
+										alert("aaa");
+									}}
+								>
+									ボタン
+								</PrimaryButton>
 							</div>
 						</>
 					)}
