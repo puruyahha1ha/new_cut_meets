@@ -10,3 +10,6 @@
 
 ### 以下、注意事項  
 `docker-compose build` を実行した時点のソースコードが反映される為、ソースを編集した際に、`docker-compose down` を実行した後に、再度 `docker-compose build` → `docker-compose up` or `docker-compose up -d` を実行すること。
+
+## ブランチ命名規則  
+製造ブランチ: `feature/<画面名 or 機能名>`
