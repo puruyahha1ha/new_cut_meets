@@ -2,7 +2,7 @@
 // import { redirect } from "next/navigation";
 import { MyPage } from "@/features/common/myPage";
 
-export default async function Page() {
+export default async function Home() {
 
   // const cookieStore = await cookies();
   // const token = cookieStore.get("token");

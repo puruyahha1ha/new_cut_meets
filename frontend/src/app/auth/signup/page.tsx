@@ -8,7 +8,7 @@ import { Icon } from "@iconify/react";
 import { actionSignup } from "@/services/auth/actionSignup";
 
 
-export default function Signup() {
+export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [isConfirmVisible, setIsConfirmVisible] = useState(false);
 

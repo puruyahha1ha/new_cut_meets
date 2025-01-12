@@ -8,7 +8,7 @@ import { Icon } from "@iconify/react";
 import { actionSignin } from "@/services/auth/actionSignin";
 
 
-export default function Signin() {
+export default function Home() {
   const [isVisible, setIsVisible] = React.useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
