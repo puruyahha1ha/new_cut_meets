@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 
-export default async function Admin() {
+export default async function MyPage() {
   const cookieStore = await cookies();
 
   return (
