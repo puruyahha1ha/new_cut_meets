@@ -1,13 +1,10 @@
 import { Button, Card } from "@nextui-org/react";
 import { useRef, useState } from "react";
 import Image from "next/image";
+import { CarouselImage } from "./type";
 
 type Props = {
-    images: Image[];
-};
-
-type Image = {
-    imagePath: string;
+    images: CarouselImage[];
 };
 
 type Direction = 'left' | 'right';
