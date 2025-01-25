@@ -2,6 +2,7 @@ import { Button, Card } from "@nextui-org/react";
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { CarouselImage } from "./type";
+import { Icon } from "@iconify/react";
 
 type Props = {
     images: CarouselImage[];
@@ -60,7 +61,10 @@ export const CarouselImages = (props: Props) => {
                     isDisabled={activeIndex === 0}
                     onPress={() => handleScroll('left')}
                 >
-                    <span className="w-4 h-4 sm:w-5 sm:h-5">{ '<' }</span>
+                    <Icon
+                        className="w-4 h-4 sm:w-5 sm:h-5 inline"
+                        icon="solar:alt-arrow-left-line-duotone"
+                    />
                 </Button>
 
                 <div
@@ -99,7 +103,10 @@ export const CarouselImages = (props: Props) => {
                     onPress={() => handleScroll('right')}
                     style={{ display: activeIndex === props.images.length - 1 ? "none" : "block" }}
                 >
-                    <span className="w-4 h-4 sm:w-5 sm:h-5">{ '>' }</span>
+                    <Icon
+                        className="w-4 h-4 sm:w-5 sm:h-5 inline"
+                        icon="solar:alt-arrow-right-line-duotone"
+                    />
                 </Button>
             </div>
         </Card>
