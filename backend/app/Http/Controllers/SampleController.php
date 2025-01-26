@@ -42,6 +42,10 @@ class SampleController extends Controller
                 'id' => 7,
                 'name' => '保守',
             ],
+            [
+                'id' => 8,
+                'name' => '不具合対応',
+            ],
         ];
 
         return response()->json([
