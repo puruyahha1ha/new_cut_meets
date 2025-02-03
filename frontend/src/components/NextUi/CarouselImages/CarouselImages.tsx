@@ -56,7 +56,7 @@ export const CarouselImages = (props: Props) => {
                     color="primary"
                     radius="full"
                     size="sm"
-                    className="absolute left-1 sm:left-2 z-10 xl:ml-5"
+                    className="absolute !size-auto left-1 sm:left-2 z-10 xl:ml-2"
                     style={{ display: activeIndex === 0 ? "none" : "block" }}
                     isDisabled={activeIndex === 0}
                     onPress={() => handleScroll('left')}
@@ -96,7 +96,7 @@ export const CarouselImages = (props: Props) => {
 
                 <Button
                     isIconOnly
-                    className="absolute right-1 sm:right-2 w-2 xl:mr-5"
+                    className="absolute !size-auto right-1 sm:right-2 w-2 xl:mr-2"
                     size="sm"
                     color="primary"
                     radius="full"
