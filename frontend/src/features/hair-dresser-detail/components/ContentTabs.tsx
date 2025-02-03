@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardBody, Tab, Tabs } from "@nextui-org/react";
+import { Card, CardBody, Tab, Tabs } from "@heroui/react";
 import type { FC } from "react";
 import { PhotoCard } from "./PhotoCard";
 import { ProfileCard } from "./ProfileCard";
