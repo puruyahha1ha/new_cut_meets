@@ -1,15 +1,14 @@
 # new_cut_meets
 
 ## コンテナ起動手順  
-1. `docker-compose build` を実行し、コンテナをビルド。  
-2. `docker-compose up` を実行し、コンテナを起動。  
-    2-1. `docker-compose up -d` を実行することで、バックエンドでコンテナを起動することも可能。  
-3. `docker-compose stop` or `ctrl + c` を実行することで、コンテナを一時停止。
-4. `docker-compose down` を実行し、コンテナを削除。
-   4-1. `docker-compose down -v` を実行することで、docker volumeごとコンテナを削除することができる。
+1. `docker compose watch` を実行し、コンテナをビルドアップ  
+   1. 上記、コマンドは、 `backend/`, `frontend/`配下にあるファイルの変更を監視しており、修正を検知した場合、コンテナに対して即時同期をするコマンドです。  
+2. コンテナが不要になった場合、 `ctrl + c` でコンソールから抜けた後、 `docker compose stop` でコンテナを停止してください。  
+   1. `docker compose down`, `docker compose down -v` を実行した場合、コンテナイメージが破棄される為、次回の `docker compose watch` にコンテナのビルドから始まります。  
+        => composer install コマンドが走るため、backendコンテナのビルドに異様に時間がかかります。  
 
 ### 以下、注意事項  
-`docker-compose build` を実行した時点のソースコードが反映される為、ソースを編集した際に、`docker-compose down` を実行した後に、再度 `docker-compose build` → `docker-compose up` or `docker-compose up -d` を実行すること。
+上述していますが、コンテナの停止時には必ず `docker compose stop` を実行してください。
 
 ## ブランチ命名規則  
 製造ブランチ: `feature/<画面名 or 機能名>`
