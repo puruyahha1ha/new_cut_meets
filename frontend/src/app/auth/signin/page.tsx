@@ -2,7 +2,7 @@
 
 import React from "react";
 import Form from 'next/form'
-import { Button, Input, Checkbox, Link } from "@nextui-org/react";
+import { Button, Input, Checkbox, Link } from "@heroui/react";
 import { Icon } from "@iconify/react";
 
 import { actionSignin } from "@/services/auth/actionSignin";

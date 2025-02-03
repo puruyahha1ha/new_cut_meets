@@ -1,8 +1,8 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import { Button, Image, Skeleton } from "@nextui-org/react";
-import { cn } from "@nextui-org/react";
+import { Button, Image, Skeleton } from "@heroui/react";
+import { cn } from "@heroui/react";
 import React from "react";
 
 export type PlaceListItemColor = {

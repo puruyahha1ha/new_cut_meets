@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   frontend:
     build:
@@ -7,29 +5,47 @@ services:
       dockerfile: Dockerfile
     ports:
       - "${FRONTEND_LOCAL_PORT}:${FRONTEND_CONTAINER_PORT}"
+    develop:
+      watch:
+        - action: sync
+          path: ./frontend
+          target: /app
+          ignore:
+            - node_modules
+        - action: rebuild
+          path: ./frontend/package.json
     depends_on:
       backend:
         condition: service_healthy
     networks:
       - service-network
-    command: sh -c "npm run lint && npm run build && npm start"
+    command: sh -c "npm run dev"
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    depends_on:
-      db:
-        condition: service_healthy
     env_file:
       - .env
+    command: sh -c "php artisan migrate && apache2-foreground"
+    develop:
+      watch: 
+        - action: sync
+          path: ./backend
+          target: /var/www/html
+          ignore:
+            - vendor
+        - action: rebuild
+          path: ./backend/composer.json
     healthcheck:
       test: ["CMD-SHELL", "curl -f ${BACKEND_URL} || exit 1"]      
       interval: ${HEALTH_CHECK_INTERVAL}
       timeout: ${HEALTH_CHECK_TIMEOUT}
       retries: ${HEALTH_CHECK_RETRIES}
+    depends_on:
+      db:
+        condition: service_healthy
     networks:
       - service-network
-    command: sh -c "php artisan migrate && apache2-foreground"
   db:
     build:
       context: ./db
