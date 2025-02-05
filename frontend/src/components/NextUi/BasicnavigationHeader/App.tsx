@@ -20,7 +20,7 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "@heroui/react";
+} from "@nextui-org/react"
 import React from "react";
 
 import { AcmeIcon } from "./acme";
