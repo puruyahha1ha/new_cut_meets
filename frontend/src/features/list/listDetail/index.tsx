@@ -3,8 +3,6 @@
 import { type FC } from "react";
 import { CarouselImages } from "@/components/NextUi/CarouselImages/CarouselImages";
 import { Button, Card, CardBody, Chip, Divider } from "@nextui-org/react"
-import BasicnavigationHeader from "@/components/NextUi/BasicnavigationHeader/App";
-import Footer from "@/components/Footer";
 import { CarouselImage } from "@/components/NextUi/CarouselImages/type";
 
 export const ListDetail: FC = () => {
@@ -28,8 +26,6 @@ export const ListDetail: FC = () => {
 
     return (
         <>
-            <BasicnavigationHeader />
-
             <div className="min-h-screen py-6 sm:py-8 md:py-12 bg-gray-50">
                 <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
                     <CarouselImages images={images}></CarouselImages>
@@ -106,8 +102,6 @@ export const ListDetail: FC = () => {
                     </div>
                 </div>
             </div>
-
-            <Footer />
         </>
     );
 };
