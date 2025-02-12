@@ -1,9 +1,10 @@
 "use client";
 
-import { Card, CardBody, Tab, Tabs } from "@heroui/react";
+import { Card, CardBody, Tab, Tabs } from "@nextui-org/react";
 import type { FC } from "react";
 import { PhotoCard } from "./PhotoCard";
 import { ProfileCard } from "./ProfileCard";
+import { ReviewsCard } from "./ReviewsCard";
 
 export const ContentTabs: FC = () => {
 	return (
@@ -36,7 +37,9 @@ export const ContentTabs: FC = () => {
 					</Tab>
 					<Tab key="review" title="Review">
 						<Card className="shadow-none">
-							<CardBody>レビュー！</CardBody>
+							<CardBody>
+								<ReviewsCard />
+							</CardBody>
 						</Card>
 					</Tab>
 				</Tabs>
