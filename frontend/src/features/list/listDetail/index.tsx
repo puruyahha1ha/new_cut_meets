@@ -1,9 +1,9 @@
 "use client";
 
 import { type FC } from "react";
-import { CarouselImages } from "@/components/NextUi/CarouselImages/CarouselImages";
+import { CarouselImages } from "@/components/CarouselImages/CarouselImages";
 import { Button, Card, CardBody, Chip, Divider } from "@nextui-org/react"
-import { CarouselImage } from "@/components/NextUi/CarouselImages/type";
+import { CarouselImage } from "@/components/CarouselImages/type";
 
 export const ListDetail: FC = () => {
     const images: CarouselImage[] = [
