@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Form from 'next/form'
-import { Button, Input, Link } from "@heroui/react";
+import { Button, Input, Link } from "@nextui-org/react"
 import { Icon } from "@iconify/react";
 
 import { actionSignup } from "@/services/auth/actionSignup";

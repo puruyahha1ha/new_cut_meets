@@ -2,7 +2,7 @@
 
 import { type FC } from "react";
 import { CarouselImages } from "@/components/NextUi/CarouselImages/CarouselImages";
-import { Button, Card, CardBody, Chip, Divider } from "@heroui/react";
+import { Button, Card, CardBody, Chip, Divider } from "@nextui-org/react"
 import BasicnavigationHeader from "@/components/NextUi/BasicnavigationHeader/App";
 import Footer from "@/components/Footer";
 import { CarouselImage } from "@/components/NextUi/CarouselImages/type";

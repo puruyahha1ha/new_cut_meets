@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@heroui/react";
+import { cn } from "@nextui-org/react"
 import React from "react";
 
 import PlaceListItem from "./place-list-item";

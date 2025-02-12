@@ -1,4 +1,4 @@
-import { Button, Card } from "@heroui/react";
+import { Button, Card } from "@nextui-org/react"
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { CarouselImage } from "./type";
