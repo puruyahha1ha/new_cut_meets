@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
-import BasicnavigationHeader from "@/components/NextUi/BasicnavigationHeader/App";
 import Footer from "@/components/Footer";
-import Sidebar from "@/components/Sidebar";
 import MobileFooter from "@/components/MobileFooter";
+import BasicnavigationHeader from "@/components/NextUi/BasicnavigationHeader/App";
+import Sidebar from "@/components/Sidebar";
+import { ToastProvider } from "@/context/ToastContect";
+import { Providers } from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,17 +34,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          <BasicnavigationHeader />
-          <div className="md:grid grid-cols-3 h-4/5">
-            <Sidebar />
-            <div>
-              <main className="md:min-w-[800px] mb-[60px]">
-                {children}
-              </main>
-              <Footer />
+          <ToastProvider>
+            <BasicnavigationHeader />
+            <div className="md:grid grid-cols-3 h-4/5">
+              <Sidebar />
+              <div>
+                <main className="md:min-w-[800px] mb-[60px]">
+                  {children}
+                </main>
+                <Footer />
+              </div>
             </div>
-          </div>
-          <MobileFooter />
+            <MobileFooter />
+          </ToastProvider>
         </Providers>
       </body>
     </html>
