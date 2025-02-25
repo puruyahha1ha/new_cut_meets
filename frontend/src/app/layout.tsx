@@ -36,15 +36,15 @@ export default function RootLayout({
         <Providers>
           <ToastProvider>
             <BasicnavigationHeader />
-            <div className="md:grid grid-cols-3 h-4/5">
-              <Sidebar />
-              <div>
-                <main className="md:min-w-[800px] mb-[60px]">
-                  {children}
-                </main>
-                <Footer />
-              </div>
+            {/* <div className="md:grid grid-cols-3 h-4/5"> */}
+            {/* <Sidebar /> */}
+            <div>
+              {/* <main className="md:min-w-[1200px] mb-[60px]"> */}
+              {children}
+              {/* </main> */}
+              <Footer />
             </div>
+            {/* </div> */}
             <MobileFooter />
           </ToastProvider>
         </Providers>
