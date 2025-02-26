@@ -3,7 +3,6 @@
 import { CarouselImages } from "@/components/CarouselImages/CarouselImages";
 import type { CarouselImage } from "@/components/CarouselImages/type";
 import { Button, Card, CardBody, Chip, Divider } from "@nextui-org/react"
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { FC } from "react";
 
