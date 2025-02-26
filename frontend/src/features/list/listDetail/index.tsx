@@ -1,11 +1,17 @@
 "use client";
 
-import { type FC } from "react";
 import { CarouselImages } from "@/components/CarouselImages/CarouselImages";
+import type { CarouselImage } from "@/components/CarouselImages/type";
 import { Button, Card, CardBody, Chip, Divider } from "@nextui-org/react"
-import { CarouselImage } from "@/components/CarouselImages/type";
+import Link from "next/link";
+import type { FC } from "react";
 
-export const ListDetail: FC = () => {
+type Props = {
+    id: string;
+}
+
+export const ListDetail: FC<Props> = (props: Props) => {
+    const { id } = props;
     const images: CarouselImage[] = [
         {
             imagePath: "/cutmodel.jpg",
@@ -73,13 +79,15 @@ export const ListDetail: FC = () => {
                                         <Chip size="sm" variant="flat">（税込）</Chip>
                                     </div>
 
-                                    <Button
-                                        color="primary"
-                                        size="lg"
-                                        className="w-full"
-                                    >
-                                        予約する
-                                    </Button>
+                                    <Link href={`/list/${id}/booking`}>
+                                        <Button
+                                            color="primary"
+                                            size="lg"
+                                            className="w-full"
+                                        >
+                                            予約する
+                                        </Button>
+                                    </Link>
 
                                     <p className="text-xs sm:text-sm text-default-500">
                                         ※ 土日祝は+¥500となります
@@ -101,7 +109,7 @@ export const ListDetail: FC = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 };

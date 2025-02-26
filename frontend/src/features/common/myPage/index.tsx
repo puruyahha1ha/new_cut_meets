@@ -15,6 +15,7 @@ import {
 	Tabs,
 	User,
 } from "@nextui-org/react";
+import { useSearchParams } from "next/navigation";
 import React, { type FC } from "react";
 
 interface BookingHistory {
@@ -28,6 +29,9 @@ interface BookingHistory {
 }
 
 export const MyPage: FC = () => {
+	const searchParams = useSearchParams();
+	const type = searchParams.get("type");
+
 	const mockBookingHistory: BookingHistory[] = [
 		{
 			id: 1,
@@ -54,7 +58,7 @@ export const MyPage: FC = () => {
 			<div className="max-w-2xl mx-auto">
 				<h1 className="text-2xl font-bold mb-6">マイページ</h1>
 
-				<Tabs aria-label="Profile tabs" className="mb-6">
+				<Tabs aria-label="Profile tabs" className="mb-6" selectedKey={type ?? 'profile'}>
 					<Tab key="profile" title="プロフィール">
 						<Card>
 							<CardBody>
