@@ -150,7 +150,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({ service, initialData, 
         <div className="max-w-4xl mx-auto space-y-8">
             <Card className="bg-white">
                 <CardHeader className="p-0">
-                    <picture>
+                    <picture className='w-full'>
                         <img
                             src={service.image}
                             alt={service.name}
