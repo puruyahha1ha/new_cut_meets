@@ -19,11 +19,13 @@ export const ConfirmationScreen: React.FC<ConfirmationScreenProps> = ({ booking,
 
             <CardBody className="space-y-6">
                 <div className="flex items-start space-x-4">
-                    <img
-                        src={booking.service.image}
-                        alt={booking.service.name}
-                        className="w-24 h-24 object-cover rounded-lg"
-                    />
+                    <picture>
+                        <img
+                            src={booking.service.image}
+                            alt={booking.service.name}
+                            className="w-24 h-24 object-cover rounded-lg"
+                        />
+                    </picture>
                     <div>
                         <h3 className="text-lg font-medium text-gray-900">{booking.service.name}</h3>
                         <p className="text-gray-500">{booking.service.description}</p>

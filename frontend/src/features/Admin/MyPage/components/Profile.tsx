@@ -1,9 +1,10 @@
 import { Button, Card, CardBody, Chip, Input, Textarea } from '@nextui-org/react';
 import { Camera } from 'lucide-react';
 import React from 'react';
-import type { StylistProfile } from '../../types';
+import type { StylistProfile } from '../types';
 
 export const Profile: React.FC = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [profile, setProfile] = React.useState<StylistProfile>({
         id: 1,
         name: '山田 美咲',
@@ -24,11 +25,13 @@ export const Profile: React.FC = () => {
                     {/* プロフィール画像 */}
                     <div className="flex items-center space-x-6">
                         <div className="relative">
-                            <img
-                                src={profile.avatar}
-                                alt={profile.name}
-                                className="w-24 h-24 rounded-full object-cover"
-                            />
+                            <picture>
+                                <img
+                                    src={profile.avatar}
+                                    alt={profile.name}
+                                    className="w-24 h-24 rounded-full object-cover"
+                                />
+                            </picture>
                             <Button
                                 isIconOnly
                                 className="absolute bottom-0 right-0"

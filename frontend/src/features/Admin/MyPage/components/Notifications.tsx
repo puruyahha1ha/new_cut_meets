@@ -1,9 +1,10 @@
 import { Badge, Card, CardBody } from '@nextui-org/react';
 import { Bell } from 'lucide-react';
 import React from 'react';
-import type { Notification } from '../../types';
+import type { Notification } from '../types';
 
 export const Notifications: React.FC = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [notifications, setNotifications] = React.useState<Notification[]>([
         {
             id: 1,

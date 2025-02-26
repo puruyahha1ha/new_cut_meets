@@ -2,16 +2,13 @@ import {
     Button,
     Card,
     CardBody,
-    Input,
-    Select,
-    SelectItem,
-    Textarea,
 } from '@nextui-org/react';
 import { Edit2, Plus, Trash2 } from 'lucide-react';
 import React from 'react';
-import type { ModelPost } from '../../types';
+import type { ModelPost } from '../types';
 
 export const ModelPosts: React.FC = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [posts, setPosts] = React.useState<ModelPost[]>([
         {
             id: 1,

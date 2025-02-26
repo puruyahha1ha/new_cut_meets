@@ -4,7 +4,6 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import MobileFooter from "@/components/MobileFooter";
 import BasicnavigationHeader from "@/components/NextUi/BasicnavigationHeader/App";
-import Sidebar from "@/components/Sidebar";
 import { ToastProvider } from "@/context/ToastContect";
 import { Providers } from "./providers";
 

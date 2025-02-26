@@ -1,11 +1,11 @@
 import { Button, Card, CardBody, CardHeader, Input, Select, SelectItem } from '@nextui-org/react';
 import { format, isValid, parse } from 'date-fns';
-import ja from 'date-fns/locale/ja';
+import { ja } from 'date-fns/locale/ja';
 import { Calendar, Clock } from 'lucide-react';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import { BookingFormData, ServiceType } from '../types';
+import type { BookingFormData, ServiceType } from '../types';
 
 registerLocale('ja', ja);
 
@@ -150,11 +150,13 @@ export const BookingForm: React.FC<BookingFormProps> = ({ service, initialData, 
         <div className="max-w-4xl mx-auto space-y-8">
             <Card className="bg-white">
                 <CardHeader className="p-0">
-                    <img
-                        src={service.image}
-                        alt={service.name}
-                        className="w-full h-64 object-cover"
-                    />
+                    <picture>
+                        <img
+                            src={service.image}
+                            alt={service.name}
+                            className="w-full h-64 object-cover"
+                        />
+                    </picture>
                 </CardHeader>
                 <CardBody className="p-6">
                     <h3 className="text-2xl font-medium text-gray-900">{service.name}</h3>

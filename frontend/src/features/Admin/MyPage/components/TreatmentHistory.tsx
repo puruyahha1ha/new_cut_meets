@@ -1,9 +1,10 @@
 import { Button, Card, CardBody, Input } from '@nextui-org/react';
 import { Search } from 'lucide-react';
 import React from 'react';
-import type { Treatment } from '../../types';
+import type { Treatment } from '../types';
 
 export const TreatmentHistory: React.FC = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [treatments, setTreatments] = React.useState<Treatment[]>([
         {
             id: 1,

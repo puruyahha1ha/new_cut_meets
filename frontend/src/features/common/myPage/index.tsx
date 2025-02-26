@@ -16,7 +16,7 @@ import {
 	User,
 } from "@nextui-org/react";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect, type FC } from "react";
+import React, { type FC } from "react";
 
 interface BookingHistory {
 	id: number;

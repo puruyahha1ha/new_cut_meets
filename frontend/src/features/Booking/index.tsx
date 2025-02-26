@@ -1,9 +1,6 @@
 'use client';
 
-import useToast from '@/components/Toast/useToast';
 import { useToastContext } from '@/context/ToastContect';
-import { Button } from '@nextui-org/react';
-import { Scissors } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { BookingForm, ConfirmationScreen } from './components';
